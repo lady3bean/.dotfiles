@@ -11,3 +11,6 @@ mkdir $HOME/.config
 if [ ! -f $HOME/.config/powerline ] ; then
 	ln -s $DOTFILES/.config/powerline $HOME/.config/powerline
 fi
+
+echo "installing powerline packages"
+pip install --user powerline-status powerline-gitstatus

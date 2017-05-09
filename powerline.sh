@@ -1,3 +1,4 @@
+export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 powerline-daemon -q
 export POWERLINE_COMMAND=powerline
 export POWERLINE_CONFIG_COMMAND=powerline-config
