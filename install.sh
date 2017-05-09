@@ -14,3 +14,5 @@ fi
 
 echo "installing powerline packages"
 pip install --user powerline-status powerline-gitstatus
+
+$DOTFILES/install.gitconfig.sh
