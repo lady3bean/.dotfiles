@@ -1,6 +1,14 @@
 # the location of pip installed assets on OSX
-python_bin=$HOME/Library/Python/2.7/bin
-powerline_dir=$HOME/Library/Python/2.7/lib/python/site-packages/powerline
+if [[ -e $HOME/Library/Python/2.7/bin ]] ; then
+    python_bin=$HOME/Library/Python/2.7/bin
+    powerline_dir=$HOME/Library/Python/2.7/lib/python/site-packages/powerline
+elif [[ -e $HOME/.local ]] ; then
+    python_bin=$HOME/.local/bin
+    powerline_dir=$HOME/.local/lib/python2.6/site-packages/powerline
+else
+    echo "could not detect location of pip user installs"
+    exit 1
+fi
 
 export PATH="$PATH:$python_bin"
 powerline-daemon -q

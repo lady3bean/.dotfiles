@@ -20,4 +20,3 @@ cat > $HOME/.gitexcludes <<__EOF__
 __EOF__
 
 git config --global color.ui auto
-git config --global push.default simple
