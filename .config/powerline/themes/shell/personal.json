@@ -3,7 +3,10 @@
 		"left": [
 			{
 				"function": "powerline.segments.common.net.hostname",
-				"priority": 10
+				"priority": 10,
+				"args": {
+					"exclude_domain": true
+				}
 			},
 			{
 				"function": "powerline.segments.common.env.user",

@@ -17,3 +17,7 @@ export POWERLINE_CONFIG_COMMAND=powerline-config
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 . $powerline_dir/bindings/bash/powerline.sh
+
+powerline-reload() {
+    powerline-daemon --replace
+}

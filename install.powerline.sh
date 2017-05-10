@@ -6,7 +6,7 @@ echo "---installing powerline packages---"
 mkdir -p $HOME/.config
 
 if [[ ! -e $HOME/.config/powerline ]] ; then
-    ln -s $DOTFILES/.config/powerline $HOME/.config/powerline
+    ln -s $DOTFILES/.config/powerline $HOME/.config/
 fi
 
 if [[ "$(type -P brew)" ]] ; then
