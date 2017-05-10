@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 git config --global user.name "Hawley Brett"
 git config --global user.email "AnneHawleyBrett@gmail.com"
@@ -14,9 +15,9 @@ git config --global alias.undo "reset --hard"
 git config --global core.autocrlf input
 git config --global core.excludesfile $HOME/.gitexcludes
 
-cat > $HOME/.gitexcludes <<EOF
+cat > $HOME/.gitexcludes <<__EOF__
 .DS_Store
-EOF
+__EOF__
 
 git config --global color.ui auto
 git config --global push.default simple

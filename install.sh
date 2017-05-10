@@ -1,18 +1,19 @@
 #!/bin/bash
+set -e
 
 DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 cd $DOTFILES
 
-echo "export DOTFILES=$DOTFILES" >> $HOME/.bash_profile
-echo ". \$DOTFILES/init.sh" >> $HOME/.bash_profile
+bash -e $DOTFILES/install.gitconfig.sh
+bash -e $DOTFILES/install.powerline.sh
 
-mkdir $HOME/.config
+# Look for a previous dotfiles install in the bash_profile
+# OR if grep failed (i.e. a non-zero exit status) append the following text until EOF
+grep "export DOTFILES=" $HOME/.bash_profile >/dev/null 2>&1 \
+    || cat >> $HOME/.bash_profile <<__EOF__
 
-if [ ! -f $HOME/.config/powerline ] ; then
-	ln -s $DOTFILES/.config/powerline $HOME/.config/powerline
-fi
-
-echo "installing powerline packages"
-pip install --user powerline-status powerline-gitstatus
-
-$DOTFILES/install.gitconfig.sh
+# https://github.com/lady3bean/.dotfiles
+export DOTFILES=$DOTFILES
+. \$DOTFILES/init.sh
+__EOF__
