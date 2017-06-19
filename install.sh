@@ -3,6 +3,7 @@ set -e
 
 DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOTHOME=$HOME
+export DOTHOME DOTFILES
 
 cd $DOTFILES
 
