@@ -7,7 +7,7 @@ elif [[ -e $DOTHOME/.local ]] ; then
     powerline_dir=$DOTHOME/.local/lib/python2.6/site-packages/powerline
 else
     echo "could not detect location of pip user installs"
-    exit 1
+    # exit 1
 fi
 
 export PATH="$PATH:$python_bin"
