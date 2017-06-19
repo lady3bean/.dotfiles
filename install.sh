@@ -21,3 +21,5 @@ export DOTFILES=$DOTFILES
 export DOTHOME=$DOTHOME
 . \$DOTFILES/init.sh
 __EOF__
+
+. $DOTFILES/init.sh
