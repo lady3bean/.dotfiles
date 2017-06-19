@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function link_to() {
+link_to() {
     local src dest dest_dir
     src="$1"
     dest="$2"
@@ -12,4 +12,11 @@ function link_to() {
         ln -s $src $dest
         echo "created link from $src to $dest"
     fi
+}
+
+
+su() {
+  user=$( [[ -n $1 ]] && echo "-u $1" )
+  profile=$HOME/.bash_profile
+  sudo $user bash --rcfile $profile -i
 }
