@@ -14,9 +14,18 @@ link_to() {
     fi
 }
 
-
 su() {
-  user=$( [[ -n $1 ]] && echo "-u $1" )
-  profile=$HOME/.bash_profile
-  sudo $user bash --rcfile $profile -i
+    local user profile
+    user=$( [[ -n $1 ]] && echo "-u $1" )
+    profile=$HOME/.bash_profile
+    sudo $user bash --rcfile $profile -i
+}
+
+update_dotfiles() {
+    local oldwd
+    oldwd=$(pwd)
+    cd $DOTFILES
+    git pull
+    . init.sh
+    cd $oldwd
 }
