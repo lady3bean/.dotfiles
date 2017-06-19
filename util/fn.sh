@@ -16,9 +16,9 @@ link_to() {
 
 su() {
     local user profile
-    user=$( [[ -n $1 ]] && echo "-u $1" )
+    user="$( [[ -n $1 ]] && echo "-u $1" )"
     profile=$DOTHOME/.bash_profile
-    sudo $user bash --rcfile $profile -i
+    sudo -E $user SSH_CLIENT="$SSH_CLIENT" bash --rcfile $profile -E -i
 }
 
 update_dotfiles() {
