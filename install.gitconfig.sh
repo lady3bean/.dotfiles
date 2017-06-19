@@ -13,9 +13,9 @@ git config --global alias.pr-clean '!git for-each-ref refs/heads/pr/* --format="
 git config --global alias.undo "reset --hard"
 
 git config --global core.autocrlf input
-git config --global core.excludesfile $HOME/.gitexcludes
+git config --global core.excludesfile $DOTHOME/.gitexcludes
 
-cat > $HOME/.gitexcludes <<__EOF__
+cat > $DOTHOME/.gitexcludes <<__EOF__
 .DS_Store
 __EOF__
 

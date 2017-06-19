@@ -17,7 +17,7 @@ link_to() {
 su() {
     local user profile
     user=$( [[ -n $1 ]] && echo "-u $1" )
-    profile=$HOME/.bash_profile
+    profile=$DOTHOME/.bash_profile
     sudo $user bash --rcfile $profile -i
 }
 

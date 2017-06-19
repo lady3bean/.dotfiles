@@ -3,10 +3,10 @@ set -e
 
 echo "---installing powerline packages---"
 
-mkdir -p $HOME/.config
+mkdir -p $DOTHOME/.config
 
-if [[ ! -e $HOME/.config/powerline ]] ; then
-    ln -s $DOTFILES/.config/powerline $HOME/.config/
+if [[ ! -e $DOTHOME/.config/powerline ]] ; then
+    ln -s $DOTFILES/.config/powerline $DOTHOME/.config/
 fi
 
 if [[ "$(type -P brew)" ]] ; then
