@@ -27,5 +27,6 @@ update_dotfiles() {
     cd $DOTFILES
     git pull
     . init.sh
+    bash install.sh
     cd $oldwd
 }
